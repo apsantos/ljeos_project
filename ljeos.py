@@ -24,7 +24,7 @@ class LJEOS(object):
             density
 
         """
-        self.F = ma.exp(-self.gamma * rho * rho)
+        self.F = 0 # PROJECT
         self.a = self.get_as(temp)
         self.b = self.get_bs(temp)
         self.c = self.get_as(temp)
@@ -80,8 +80,8 @@ class LJEOS(object):
         """
         a = np.zeros((8))
         T2 = T * T
-        sqrtT = T**0.5
-        a[0] = self.coeff[1]*T + self.coeff[2]*sqrtT  + self.coeff[3] + self.coeff[4]/T + self.coeff[5]/T2
+        sqrtT = 0 # PROJECT
+        a[0] = 0 # PROJECT
         a[1] = self.coeff[6]*T  + self.coeff[7] + self.coeff[8]/T + self.coeff[9]/T2
         a[2] = self.coeff[10]*T + self.coeff[11] +self.coeff[12]/T
         a[3] = self.coeff[13]
@@ -236,7 +236,8 @@ class LJEOS(object):
         A : float
             free energy
         """    
-        return (A + (P/rho) - temp)
+		mu = 0 # PROJECT
+        return mu
 
     def calcpressure(self,temp, rho):
         """Equation 7 in Johnson et al.
@@ -258,7 +259,7 @@ class LJEOS(object):
             iii = float(2*i+3)
             sum_b += self.b[i]*rho**iii
 
-        pressure = rho*temp + sum_a + self.F*sum_b
+        pressure = 0 # PROJECT
 
         return pressure
 
