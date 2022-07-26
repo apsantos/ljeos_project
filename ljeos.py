@@ -236,7 +236,7 @@ class LJEOS(object):
         A : float
             free energy
         """    
-		mu = 0 # PROJECT
+        mu = 0 # PROJECT
         return mu
 
     def calcpressure(self,temp, rho):
